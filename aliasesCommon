@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Default flags for various commands
+alias ls='ls -p'
+alias l='ls'
+alias la='ll -A'
+
+

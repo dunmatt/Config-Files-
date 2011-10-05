@@ -1,0 +1,3 @@
+#!/bin/sh
+
+alias ll='ls -le@h'

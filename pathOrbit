@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Add octave to the path.
+export PATH="$PATH":/Applications/Octave.app/Contents/Resources/bin

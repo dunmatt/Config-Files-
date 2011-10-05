@@ -1,0 +1,29 @@
+# Make the local bin dir work
+export PATH="$PATH":~/bin
+source ~/.cfgCanon/pathOrbit
+
+# Tell python to autostart pythonrc to enable readline support (for tab completion).
+export PYTHONSTARTUP=$HOME/.pythonrc.py
+
+# Colorize stuff
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+export GREP_OPTIONS='--color=audo' GREP_COLOR='1;32'
+
+source ~/.cfgCanon/aliasesCommon
+source ~/.cfgCanon/aliasesMac
+
+# Because typing 'pwd' is WAY to difficult.
+alias .='echo $PWD'
+
+# Load project specific bash settings.  These should all start with "dev" for the sake of consistency.
+alias devChromium='export PATH="$PATH":~/trunks/chromium/depot_tools;alias ph="cd $HOME/trunks/chromium/src;pwd"'
+
+
+# Customize (colorize) the bash prompt
+PS1='\[\e[0;32m\]${SHLVL} \[\e[38;5;22m\]\u\[\e[0;15m\]@\[\e[38;5;23m\]\h \[\e[38;5;56m\]\W\[\e[0;37m\]\$ '
+
+# Append to the history file instead of overwriting it
+shopt -s histappend
+
+

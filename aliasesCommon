@@ -1,8 +1,9 @@
 #!/bin/sh
 
 # Default flags for various commands
-alias ls='ls -p'
+alias ls='ls -p --group-directories-first'
 alias l='ls'
 alias la='ll -A'
+alias ps='ps auxf'
 
 

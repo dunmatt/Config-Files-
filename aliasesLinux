@@ -1,0 +1,4 @@
+alias ll='ls -lh'
+alias gimme='sudo apt-get install'
+alias o='xdg-open'
+

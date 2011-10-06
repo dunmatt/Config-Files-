@@ -1,0 +1,9 @@
+source ~/.cfgCanon/bashrcCommon
+
+source ~/.cfgCanon/pathOrbit
+
+# Tell python to autostart pythonrc to enable readline support (for tab completion).
+export PYTHONSTARTUP=$HOME/.pythonrc.py
+
+source ~/.cfgCanon/aliasesMac
+

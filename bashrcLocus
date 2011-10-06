@@ -1,0 +1,14 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+source ~/.cfgCanon/bashrcCommon
+source ~/.cfgCanon/aliasesLinux
+
+alias devAndroid='export PATH=${PATH}:/home/matt/dev/android/android-sdk-linux_86/tools'
+alias devGo='export PATH=${PATH}:/home/matt/dev/go/bin'
+alias devChromium='export PATH=${PATH}:/home/matt/dev/chromium/depot_tools;alias ph="cd /home/matt/dev/chromium/src;pwd"'
+
+alias p='nyxmms2 toggle'
+alias s='nyxmms2 stop'
+

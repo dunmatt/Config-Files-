@@ -1,0 +1,27 @@
+# Make the local bin dir work
+export PATH="$PATH":~/bin
+
+# Bind the standard aliases
+source ~/.cfgCanon/aliasesCommon
+
+# Customize (colorize) the bash prompt
+PS1='\[\e[0;32m\]${SHLVL} \[\e[38;5;22m\]\u\[\e[0;15m\]@\[\e[38;5;23m\]\h \[\e[38;5;56m\]\W\[\e[0;37m\]\$ '
+ 
+# Append to the history file instead of overwriting it
+shopt -s histappend
+
+# Colorize stuff
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+export GREP_OPTIONS='--color=audo' GREP_COLOR='1;32'
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+

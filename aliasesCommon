@@ -6,4 +6,9 @@ alias l='ls'
 alias la='ll -A'
 alias ps='ps auxf'
 
+# Git aliases
+alias gaa='git add -A'
+alias gca='git commit -a'
+alias gd='git diff'
+alias gdc='git diff --cached'
 

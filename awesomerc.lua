@@ -12,6 +12,10 @@ require("vicious")
 -- Load Debian menu entries
 require("debian.menu")
 
+-- Autorun stuff
+awful.util.spawn_with_shell("runOnce gnome-settings-daemon")
+
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")

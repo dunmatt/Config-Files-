@@ -5,6 +5,9 @@ alias ls='ls -p --group-directories-first'
 alias l='ls'
 alias la='ll -A'
 alias ps='ps auxf'
+alias .='pwd'
+alias ..='cd ..'
+alias cd..='cd ..'
 
 # Git aliases
 alias gaa='git add -A'

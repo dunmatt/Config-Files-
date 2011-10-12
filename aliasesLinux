@@ -1,5 +1,5 @@
 #!/bin/sh
-alias ls='ls -p --group-directories-first'
+alias ls='ls -p --group-directories-first --color=auto'
 alias ll='ls -lh'
 alias gimme='sudo apt-get install'
 alias o='xdg-open'

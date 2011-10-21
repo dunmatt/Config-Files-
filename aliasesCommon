@@ -11,7 +11,7 @@ alias cd..='cd ..'
 
 # Git aliases
 alias gaa='git add -A'
-alias gca='git commit -a -m'
+alias gc='git commit -a -m'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gr='git checkout' # r for Reset

@@ -5,13 +5,20 @@ alias ls='ls -p'
 alias l='ls'
 alias la='ll -A'
 alias ps='ps auxf'
+alias sshx='ssh -X'
 alias .='pwd'
 alias ..='cd ..'
 alias cd..='cd ..'
 
 # Git aliases
 alias gaa='git add -A'
-alias gca='git commit -a'
+alias gc='git commit -a -m'
 alias gd='git diff'
 alias gdc='git diff --cached'
+alias gr='git checkout' # r for Reset
 
+# Simplified ssh commands
+alias ssh-locus='ssh -p 2242 locus.local'
+alias sshx-locus='sshx -p 2242 locus.local'
+alias ssh-home='ssh -p 2242 dunmatt.com'
+alias sshx-home='sshx -p 2242 dunmatt.com'

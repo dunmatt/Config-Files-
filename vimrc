@@ -18,3 +18,6 @@ set modeline
 set background=dark
 set t_Co=256
 colorscheme desert256
+
+" Enable mouse wheel scrolling
+set mouse=a

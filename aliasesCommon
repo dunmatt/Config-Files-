@@ -19,6 +19,8 @@ alias gdc='git diff --cached'
 alias gr='git checkout' # r for Reset
 alias gnh='git ls-files . --exclude-standard --others'
 alias gl='git log --follow'
+alias gsr='git svn rebase'
+alias gsd='git svn dcommit'
 
 # Simplified ssh commands
 alias ssh-locus='ssh -p 2242 locus.local'

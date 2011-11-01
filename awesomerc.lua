@@ -21,7 +21,8 @@ awful.util.spawn_with_shell("runOnce gnome-settings-daemon")
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "rxvt-unicode-256color -bg black -fg white -tr -tint rgb:50/50/50 -sb"
+terminal = "rxvt-unicode -bg black -fg white -tr -tint rgb:50/50/50 -sb"
+--terminal = "rxvt-unicode-256color -bg black -fg white -tr -tint rgb:50/50/50 -sb"
 --terminal = "x-terminal-emulator"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor

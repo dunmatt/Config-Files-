@@ -12,11 +12,6 @@ require("vicious")
 -- Load Debian menu entries
 require("debian.menu")
 
--- Autorun stuff
---awful.util.spawn_with_shell("runOnce gnome-settings-daemon")
---run_once("gnome-power-manager", "")
-
-
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
@@ -26,7 +21,7 @@ terminal = "rxvt-unicode -bg black -fg white -tr -tint rgb:50/50/50 -sb"
 --terminal = "rxvt-unicode-256color -bg black -fg white -tr -tint rgb:50/50/50 -sb"
 --terminal = "x-terminal-emulator"
 --editor = os.getenv("EDITOR") or "editor"
-editor = "vim"
+editor = "komodo"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -40,12 +35,12 @@ modkey = "Mod4"
 layouts =
 {
 --    awful.layout.suit.floating,
+    awful.layout.suit.fair,
     awful.layout.suit.tile,
 --    awful.layout.suit.tile.left,
 --    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
+--    awful.layout.suit.tile.top,
+--    awful.layout.suit.fair.horizontal,
 --    awful.layout.suit.spiral,
     awful.layout.suit.spiral.dwindle,
 --    awful.layout.suit.max,
@@ -193,10 +188,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "w", function () mymainmenu:show({keygrabber=true}) end),
 
     -- Layout manipulation
-    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
-    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
-    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
-    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
+    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx( -1)    end),
+    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx(  1)    end),
+    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative(-1) end),
+    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative( 1) end),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
     awful.key({ modkey,           }, "Tab",
         function ()
@@ -210,6 +205,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
+    awful.key({ modkey, "Control" }, "q", function () awful.util.spawn("gnome-screensaver-command --lock") end),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
@@ -304,7 +300,7 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = true,
                      keys = clientkeys,
-                     buttons = clientbuttons },
+                     buttons = clientbuttons }, --},
       callback = awful.client.setslave },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
@@ -347,40 +343,4 @@ end)
 
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
--- }}}
-
-require("lfs")
--- {{{ Run programm once
-local function processwalker()
-   local function yieldprocess()
-      for dir in lfs.dir("/proc") do
-        -- All directories in /proc containing a number, represent a process
-        if tonumber(dir) ~= nil then
-          local f, err = io.open("/proc/"..dir.."/cmdline")
-          if f then
-            local cmdline = f:read("*all")
-            f:close()
-            if cmdline ~= "" then
-              coroutine.yield(cmdline)
-            end
-          end
-        end
-      end
-    end
-    return coroutine.wrap(yieldprocess)
-end
-
-local function run_once(process, cmd)
-   assert(type(process) == "string")
-   local regex_killer = {
-      ["+"]  = "%+", ["-"] = "%-",
-      ["*"]  = "%*", ["?"]  = "%?" }
-
-   for p in processwalker() do
-      if p:find(process:gsub("[-+?*]", regex_killer)) then
-	 return
-      end
-   end
-   return awful.util.spawn(cmd or process)
-end
 -- }}}

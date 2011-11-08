@@ -11,6 +11,7 @@ alias .='pwd'
 alias ..='cd ..;pwd'
 alias cd..='cd ..;pwd'
 alias regrep='grep -r . -e'
+alias chrome='google-chrome'
 
 # Git aliases
 alias ga='git add'

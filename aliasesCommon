@@ -9,7 +9,7 @@ alias sshx='ssh -X'
 alias df='df -h'
 alias .='pwd'
 alias ..='cd ..'
-alias cd..='cd ..'
+alias cd..='cd ..;pwd'
 alias regrep='grep -r . -e'
 
 # Git aliases

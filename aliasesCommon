@@ -19,6 +19,7 @@ alias ga='git add'
 alias gaa='git add -A'
 alias gc='git commit -a -m'
 alias gd='git diff'
+alias gdf="gd | grep '^---'"
 alias gdc='git diff --cached'
 alias gdcf="gdc | grep '^---'"
 alias gr='git checkout' # r for Reset

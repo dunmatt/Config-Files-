@@ -20,6 +20,7 @@ alias gaa='git add -A'
 alias gc='git commit -a -m'
 alias gd='git diff'
 alias gdc='git diff --cached'
+alias gdcf="gdc | grep '^---'"
 alias gr='git checkout' # r for Reset
 alias gnh='git ls-files . --exclude-standard --others'
 alias gl='git log --follow'

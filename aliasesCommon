@@ -17,6 +17,7 @@ alias chrome='google-chrome'
 
 # Git aliases
 alias ga='git add'
+alias ganh='ga `gnh`'
 alias gaa='git add -A'
 alias gc='git commit -a -m'
 alias gd='git diff'

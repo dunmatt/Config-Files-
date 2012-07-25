@@ -3,4 +3,5 @@ alias ls='ls -p --group-directories-first --color=auto'
 alias ll='ls -lh'
 alias gimme='sudo apt-get install'
 alias o='xdg-open'
+alias lf='fc-cache -f -v'
 

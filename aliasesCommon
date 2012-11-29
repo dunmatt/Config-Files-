@@ -14,6 +14,7 @@ alias cd..='cd ..;pwd'
 alias regrep='grep -r . -e'
 alias findgrep='find . | grep'
 alias chrome='google-chrome'
+alias mkdir='mkdir -p'
 
 # Git aliases
 alias ga='git add'

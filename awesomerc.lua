@@ -40,7 +40,7 @@ layouts =
 --    awful.layout.suit.tile.left,
 --    awful.layout.suit.tile.bottom,
 --    awful.layout.suit.tile.top,
---    awful.layout.suit.fair.horizontal,
+    awful.layout.suit.fair.horizontal,
 --    awful.layout.suit.spiral,
     awful.layout.suit.spiral.dwindle,
 --    awful.layout.suit.max,
@@ -171,6 +171,8 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+    awful.key({ modkey, }, "s", function () awful.util.spawn("import -window root /home/matt/screenshots/" .. os.time() .. ".jpg") end),
+    awful.key({ modkey, "Control" }, "Delete", function () awful.util.spawn("gnome-system-monitor") end),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),

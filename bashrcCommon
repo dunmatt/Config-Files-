@@ -1,5 +1,5 @@
 # Make the local bin dir work
-export PATH="$PATH":~/bin
+export PATH="$PATH":~/bin:~/code/go/bin
 
 # Bind the standard aliases
 source ~/.cfgCanon/aliasesCommon

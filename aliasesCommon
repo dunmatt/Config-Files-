@@ -18,7 +18,7 @@ alias mkdir='mkdir -p'
 
 # Git aliases
 alias ga='git add'
-alias gb='git branch'
+alias gb='git branch -a'
 alias ganh='ga `gnh`'
 alias gaa='git add -A'
 alias gc='git commit -a -m'

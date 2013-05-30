@@ -24,4 +24,5 @@ xterm*|rxvt*)
     ;;
 esac
 
+export MAKEFLAGS='-j8'
 

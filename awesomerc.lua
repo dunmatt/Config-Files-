@@ -382,3 +382,7 @@ os.execute('xrandr --output "DVI-I-1" --pos 1920x0')
 os.execute('xrandr --output "DVI-D-0" --pos 0x900')
 os.execute("dropbox start")
 
+os.execute('cd ~/.conky; and conky -c conkydate &')
+os.execute('cd ~/.conky; and conky -c conkyhr &')
+os.execute('cd ~/.conky; and conky -c conkymin &')
+os.execute('cd ~/.conky; and conky -c conkystats &')

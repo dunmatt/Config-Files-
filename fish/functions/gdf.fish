@@ -1,3 +1,3 @@
 function gdf
-  git diff $argv | grep '^---'
+  git ls-files -m $argv
 end

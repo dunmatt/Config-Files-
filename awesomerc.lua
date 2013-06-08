@@ -37,11 +37,11 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init("/home/matt/.cfgCanon/colorSchemes/nice-and-clean-theme/theme.lua")
+-- beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "roxterm"
--- terminal = "x-terminal-emulator"
+terminal = "x-terminal-emulator"
 editor = os.getenv("EDITOR") or "lime"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -381,3 +381,4 @@ os.execute('xrandr --output "DVI-I-1" --rotate left')
 os.execute('xrandr --output "DVI-I-1" --pos 1920x0')
 os.execute('xrandr --output "DVI-D-0" --pos 0x900')
 os.execute("dropbox start")
+

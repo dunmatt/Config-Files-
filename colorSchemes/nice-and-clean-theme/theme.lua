@@ -8,7 +8,7 @@ theme.wallpaper_cmd = { "awsetbg " .. theme.theme_dir .. "/background.jpg" }
 theme.font          = "sans 9"
 
 theme.bg_normal     = "#222222"
-theme.bg_focus      = "#d8d8d8"
+theme.bg_focus      = "#666666"
 theme.bg_urgent     = "#d02e54"
 theme.bg_minimize   = "#444444"
 

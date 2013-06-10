@@ -233,7 +233,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
-    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
+    -- awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
@@ -241,6 +241,13 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
+    awful.key({ modkey,           }, "p",     function () awful.util.spawn_with_shell("roxterm -e python") end),
+    awful.key({ modkey,           }, "c",     function () awful.util.spawn_with_shell("roxterm -e octave") end),
+    awful.key({ modkey,           }, "v",     function () awful.util.spawn_with_shell("pavucontrol") end),
+    awful.key({ modkey,           }, "b",     function () awful.util.spawn_with_shell("chromium-browser") end),
+    awful.key({ modkey,           }, "g",     function () awful.util.spawn_with_shell("mate-system-monitor") end),
+    awful.key({ modkey,           }, "s",     function () awful.util.spawn_with_shell("sublime") end),
+    awful.key({ modkey,           }, "l",     function () awful.util.spawn_with_shell("lime") end),
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
@@ -269,12 +276,12 @@ clientkeys = awful.util.table.join(
             -- The client currently has the input focus, so it cannot be
             -- minimized, since minimized clients can't have the focus.
             c.minimized = true
-        end),
-    awful.key({ modkey,           }, "m",
-        function (c)
-            c.maximized_horizontal = not c.maximized_horizontal
-            c.maximized_vertical   = not c.maximized_vertical
         end)
+    -- , 13awful.key({ modkey,           }, "m",
+    --     function (c)
+    --         c.maximized_horizontal = not c.maximized_horizontal
+    --         c.maximized_vertical   = not c.maximized_vertical
+    --     end)
 )
 
 -- Compute the maximum number of digit we need, limited to 9
@@ -379,7 +386,7 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 
 os.execute('xrandr --output "DVI-I-1" --rotate left')
 os.execute('xrandr --output "DVI-I-1" --pos 1920x0')
-os.execute('xrandr --output "DVI-D-0" --pos 0x900')
+os.execute('xrandr --output "DVI-D-0" --pos 0x875')
 os.execute("dropbox start")
 
 os.execute('cd ~/.conky; and conky -c conkydate &')

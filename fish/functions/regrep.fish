@@ -1,3 +1,3 @@
 function regrep
-  grep -r . -e $argv
+  grep -n -I -r . -e $argv
 end
